@@ -1,9 +1,12 @@
-version 0.2
+version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto8
   build:
     commands:
-      - echo Entered build phase..
+      - echo Build started
       - mvn clean package
   post_build:
     commands:
@@ -11,4 +14,4 @@ phases:
 artifacts:
   files:
     - target/cicddemo.jar
-discard-paths: yes
+  discard-paths: yes
